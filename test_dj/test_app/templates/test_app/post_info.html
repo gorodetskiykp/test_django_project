@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Посты
+{% endblock %}
+
+{% block content %}
+<h1>{{ post.group.name }}</h1>
+<p>
+
+{{ post.text }}<br />
+<i>{{ post.created }}</i>
+
+</p>
+{% endblock %}
