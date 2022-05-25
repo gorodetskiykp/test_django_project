@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Группы
+{% endblock %}
+
+{% block content %}
+<h1>Группы</h1>
+<p>
+    {% for group in groups %}
+        <p>
+            {% comment %} <a href="{% url 'test_app:group_posts' group.id %}">{{ group.name }}</a><br /> {% endcomment %}
+            <h4>{{ group.name }}</h4>
+            {% for post in group.posts.all %}
+                <li><a href="{% url 'test_app:post' post.id %}">{{ post.text }}</a></li>
+            {% endfor %}  
+        </p>
+    {% endfor %}
+</p>
+{% endblock %}
